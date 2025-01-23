@@ -1,0 +1,83 @@
+/* init tailwindcss */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply
+    w-screen h-screen
+    bg-amber-900 text-amber-300/40;
+}
+
+#app {
+  @apply
+    w-full h-full
+    flex flex-col
+    items-center justify-center;
+}
+
+.title {
+  @apply
+    pt-6
+    text-6xl 
+    font-bold;
+}
+
+.todo-input {
+  @apply
+    w-96
+    p-3
+    my-2 mt-8
+    text-xl
+    bg-amber-950/40
+    border-2 border-amber-950/10
+    rounded-lg
+    outline-none
+    placeholder-amber-300/20
+    hover:bg-amber-950/50
+    focus:bg-amber-950/50;
+}
+
+.todo-list {
+  @apply
+    w-96 h-full
+    flex flex-col items-center gap-1.5;
+  .todo-item {
+    @apply
+      w-full
+      max-h-10
+      min-h-10
+      px-1
+      pl-2
+      flex justify-between items-center gap-3
+      rounded-lg
+      
+      select-none
+      transition-all
+      bg-slate-100 text-slate-900
+      font-semibold
+      shadow-md;
+
+      &.completed {
+        @apply
+          line-through
+          bg-slate-900 text-slate-100/30;
+      }
+
+      .delete {
+        @apply
+          w-8 h-8
+          flex items-center justify-center
+          rounded-lg
+          bg-red-500 text-white
+          focus:bg-red-600
+          hover:bg-red-600/80
+          cursor-pointer;
+          svg {
+            @apply
+              w-7 h-7
+              m-0 p-0;
+          }
+      }
+  }
+}
